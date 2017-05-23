@@ -28,9 +28,18 @@ def naked_twins(values):
     """
 
     # Find all instances of naked twins
+    for unit in unitlist:
+        doubles = [box for box in unit if values[box] == 2]
+        twins = []
+        for i in range(len(doubles)):
+            for j in range(len(doubles)):
+                if i != j:
+                    if values[doubles[i]] == values[doubles[j]]:
+                        twins.append((doubles[i], doubles[j]))
+        
 
     # Eliminate the naked twins as possibilities for their peers
-    pass
+    
 
 rows = 'ABCDEFGHI'
 cols = '123456789'
